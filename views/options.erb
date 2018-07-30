@@ -1,0 +1,54 @@
+<link rel="stylesheet" type="text/css" href="/css/layout.css">
+
+<form method="post" action="pizza_options">
+	<div class="delivery_buttons">
+		<label for="dine_in">Dine In</label>
+				<input type="radio" name="delivery_option" id="dining_room" value="dine_in">
+		<label for="delivery">Delivery</label>
+				<input type="radio" name="delivery_option" id="no_dining_room" value="dine_out">	
+	</div>
+
+	<div class="quantity">
+		<input type="number" name="how_many" placeholder="Number of Pizzas" maxlength="2" required>
+	</div>
+
+	<div class="crust_style">
+		<label for="hand_tossed">Hand Tossed</label>
+				<input type="radio" name="crust_type" id="hand" value="handtossed">
+		<label for="pan_crust">Pan Crust</label>
+				<input type="radio" name="crust_type" id="pan" value="pancrust">	
+	</div>
+
+	<div class="topping_choices">
+		<label for="pepperoni">Pepperoni</label>
+				<input type="checkbox" name="toppings" id="pepp" value="pepp_topping">
+		<label for="sausage">Sausage</label>
+				<input type="checkbox" name="toppings" id="saus" value="saus_topping">
+		<label for="ham">Ham</label>
+				<input type="checkbox" name="toppings" id="ham" value="ham_topping">
+		<label for="bacon">Bacon</label>
+				<input type="checkbox" name="toppings" id="bacon" value="bacon_topping">
+		<label for="pineapple">Pineapple</label>
+				<input type="checkbox" name="toppings" id="pine" value="pine_topping">
+		<label for="extra_cheese">Extra Cheese</label>
+				<input type="checkbox" name="toppings" id="exchez" value="exchez_topping">
+		<label for="green_peppers">Green Peppers</label>
+				<input type="checkbox" name="toppings" id="gpepp" value="gpepp_topping">
+		<label for="banana_peppers">Banana Peppers</label>
+				<input type="checkbox" name="toppings" id="bpepp" value="bpepp_topping">
+		<label for="mushrooms">Mushrooms</label>
+				<input type="checkbox" name="toppings" id="mush" value="mush_topping">
+		<label for="olives">Olives</label>
+				<input type="checkbox" name="toppings" id="olive" value="olive_topping">
+		<label for="onions">Onions</label>
+				<input type="checkbox" name="toppings" id="onion" value="onion_topping">
+	</div>
+
+	<button class="button">Submit</button>
+
+
+</form>
+
+
+
+
