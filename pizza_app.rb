@@ -65,9 +65,5 @@ def final_total(pizza_toppings, pizza_crust, pizza_quantity, delivery_option)
 	p "I have your order as #{pizza_quantity} #{pizza_crust} pizza(s) with #{pizza_toppings} for #{delivery_option}.  Your total is $#{total}, with tax.  Thank you for your order!"
 end
 
-#puts final_total(pizza_toppings, pizza_crust, pizza_quantity, delivery_option)
- # pizza_toppings = ["pepperoni", "sausage"]
- # pizza_crust = "hand tossed"
- #  pizza_quantity = 3
- #  delivery_option = "delivery"
+#line 61 (and down) is where it starts giving me issues, everything else works right
  p "final total is {final_total(pizza_toppings, pizza_crust, pizza_quantity, delivery_option)}
