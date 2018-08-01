@@ -21,7 +21,8 @@ get '/total_page' do
 	p "params in total #{params}"
 	total = final_total(params[:pizza_toppings], params[:pizza_crust], params[:pizza_quantity], params[:delivery_option])
 	p "total is #{total}"
-	erb :total, locals:{total: total} 
+		erb :total, locals:{total: total} 
 end
 
 
+#*********************8need to work on getting the string of [pizza_toppings] back into an array to proceed with rest of code
