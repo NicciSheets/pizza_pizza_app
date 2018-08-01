@@ -60,10 +60,12 @@ def final_total(pizza_toppings, pizza_crust, pizza_quantity, delivery_option)
 	p "total_arr is #{total_arr}"
 	tax_and_delivery = (total_arr * taxes) + delivery(delivery_option)
 	p "#{total_arr * taxes}"
-	p "tax worksheet is #{tax_and_delivery)"
-	p total = "#{total_arr + tax_and_delivery}"
+	p "tax worksheet is #{tax_and_delivery}"
+	total_arr << tax_and_delivery
+	p total = total_arr.flatten.sum
+	#{}"#{total_arr + tax_and_delivery}"
 	p "I have your order as #{pizza_quantity} #{pizza_crust} pizza(s) with #{pizza_toppings} for #{delivery_option}.  Your total is $#{total}, with tax.  Thank you for your order!"
 end
-
+p final_total(pizza_toppings, pizza_crust, pizza_quantity, delivery_option)
 #line 61 (and down) is where it starts giving me issues, everything else works right
- p "final total is {final_total(pizza_toppings, pizza_crust, pizza_quantity, delivery_option)}
+ p "final total is #{final_total(pizza_toppings, pizza_crust, pizza_quantity, delivery_option)}"
