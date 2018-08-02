@@ -21,7 +21,9 @@ end
 get '/total_page' do
 	p "params in total #{params}"
 	total = final_total(params[:pizza_toppings], params[:pizza_crust], params[:pizza_quantity], params[:delivery_option], params[:pizza_size])
-	p "total is #{total}"
+	# total_order_phrase = "You've ordered '#{pizza_quantity}' '#{pizza_size}' pizza(s), '#{pizza_crust}' with '#{pizza_toppings}' for '#{delivery_option}'."
+	# total_order_cost = "Your total will be '#{total}', with tax.  Thank you!"
+	# p "total is #{total}"
 		erb :total, locals:{total: total} 
 end
 
