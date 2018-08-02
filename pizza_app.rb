@@ -70,8 +70,6 @@ def final_total(pizza_toppings, pizza_crust, pizza_quantity, delivery_option, pi
 	#p "subtotal_arr in total_arr is #{subtotal_arr}"
 	total_arr = subtotal_arr * pizza_quantity.to_f
 	total_arr << delivery(delivery_option)
-	# my_size = size(pizza_size)
-	# total_arr << my_size
 	p "in final_total total_arr is #{total_arr} class is #{total_arr.class}"
 	total = total_arr.flatten.sum
 	final_hash["pizza_quantity"] = pizza_quantity
