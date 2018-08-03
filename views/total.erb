@@ -5,11 +5,15 @@
 	<hr>
 	<%=p_quantity%>
 	<hr>
-	<%=p_size%>
+	<%= p_size %>
 	<hr>
-	<%=p_crust%>
+	<%= p_crust %>
 	<hr>
-	<%=p_toppings%>
+	<% toppings.each do |top| %>
+
+		<%=top%>
+
+	<%end%>
 	<hr>
 	<%=p_delivery%>
 	<hr>

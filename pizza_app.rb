@@ -15,12 +15,14 @@ def crust_subtotal(pizza_crust)
 end
 
 def toppings(pizza_toppings)
+	p "pizza_toppings are #{pizza_toppings} and its class is #{pizza_toppings.class}"
 	empty = []
 	toppings_price = {"pepperoni" => 0.50, "sausage" => 0.50, "ham" => 0.75, "bacon" => 0.75, "pineapple" => 1.00, "extra cheese" => 1.00, "green peppers" => 0.25, "banana peppers" => 0.25, "mushrooms" => 0.25, "olives" => 0.25, "onions" => 0.25, "none" => 0.00 }
 	toppings_subtotal = 0
 	eval(pizza_toppings).each  do |topping|
 		toppings_subtotal = toppings_price.values_at(topping)
 		empty << toppings_subtotal
+		p "toppings at empty are #{empty} and its class is #{empty.class}"
 	end
 	empty
 end
@@ -57,6 +59,7 @@ def delivery(delivery_option)
 	end
 	delivery_arr << charge
 end
+
 
 def final_total(pizza_toppings, pizza_crust, pizza_quantity, delivery_option, pizza_size)
 	#p "toppings are #{pizza_toppings} and its class is #{pizza_toppings.class}"
