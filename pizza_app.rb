@@ -7,16 +7,16 @@ def crust_subtotal(pizza_crust)
 	crust_subtotal_arr = []
 	crust = "#{pizza_crust}"
 	if crust == "pan crust" 
-		crust_subtotal_arr << 0.00
-	else 
 		crust_subtotal_arr << 1.00
+	else 
+		crust_subtotal_arr << 0.00
 	end
 	crust_subtotal_arr
 end
 
 def toppings(pizza_toppings)
 	empty = []
-	toppings_price = {"pepperoni" => 0.50, "sausage" => 0.50, "ham" => 0.75, "bacon" => 0.75, "pineapple" => 1.00, "extra cheese" => 1.00, "green peppers" => 0.25, "banana peppers" => 0.25, "mushrooms" => 0.25, "olives" => 0.25, "onions" => 0.25 }
+	toppings_price = {"pepperoni" => 0.50, "sausage" => 0.50, "ham" => 0.75, "bacon" => 0.75, "pineapple" => 1.00, "extra cheese" => 1.00, "green peppers" => 0.25, "banana peppers" => 0.25, "mushrooms" => 0.25, "olives" => 0.25, "onions" => 0.25, "none" => 0.00 }
 	toppings_subtotal = 0
 	eval(pizza_toppings).each  do |topping|
 		toppings_subtotal = toppings_price.values_at(topping)
@@ -59,7 +59,7 @@ def delivery(delivery_option)
 end
 
 def final_total(pizza_toppings, pizza_crust, pizza_quantity, delivery_option, pizza_size)
-	#p "toppings are #{pizza_toppings}"
+	#p "toppings are #{pizza_toppings} and its class is #{pizza_toppings.class}"
 	#p "delivery option is #{delivery_option}"
 	#p "crust is #{pizza_crust}"
 	#p "pizza size is #{size} and its class is #{size.class}"

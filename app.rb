@@ -1,6 +1,7 @@
 require 'sinatra'
 require_relative 'pizza_app.rb'
 
+
 enable :sessions
 
 get '/' do
@@ -21,7 +22,14 @@ end
 get '/total_page' do
 	p "params in total #{params}"
 	total = final_total(params[:pizza_toppings], params[:pizza_crust], params[:pizza_quantity], params[:delivery_option], params[:pizza_size])
-	erb :total, locals:{total: total} 
+	p_quantity = total.values[0]
+	p_size = total.values[1]
+	p_crust = total.values[2]
+	p_toppings = total.values[3]
+	p "p_toppings is #{p_toppings} and its class is #{p_toppings.class}"
+	p_delivery = total.values[4]
+	p_total = total.values[5]
+	erb :total, locals:{total: total, p_quantity: p_quantity, p_size: p_size, p_crust: p_crust, p_toppings: p_toppings, p_delivery: p_delivery, p_total: p_total} 
 end
 
 
