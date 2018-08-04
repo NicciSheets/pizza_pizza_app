@@ -44,12 +44,17 @@ post '/confirm_page' do
 	p "confirm_quantity is #{confirm_quantity} and its class is #{confirm_quantity.class}"
 	confirm_arr = []
 	confirm_arr << confirm_quantity << confirm_size << confirm_crust << confirm_topping << confirm_delivery
+	confirm_arr.uniq!
 	p "confirm arr is #{confirm_arr} and its class is #{confirm_arr.class}"
-	confirm_arr.each do |confirm|
-		if confirm == "yes"
-			redirect '/total_page'
-		else
+	confirm_arr.each do |confirmation|
+		if confirm_arr.length == 2
 			redirect '/pizza_options'
+		else confirm_arr.length == 1
+			if confirmation == "no"
+				redirect '/pizza_options'
+			else
+				redirect '/total_page'
+			end
 		end
 	end
 end	
@@ -65,6 +70,6 @@ get '/total_page' do
 end
 
 post '/total_page' do
-	
+
 	redirect '/total'
 end
