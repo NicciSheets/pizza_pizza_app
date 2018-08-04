@@ -1,0 +1,61 @@
+<form method="post" action="confirm_page">
+	<center>
+		<p>Please confirm your order below:</p>
+	<div class="confirm_quantity">
+			<% p_quantity.to_i %>
+			<% if p_quantity.to_i > 1 %>
+				<%= "#{p_quantity} Pizzas" %>
+			<% else %>
+				<%= "#{p_quantity} Pizza" %>
+			<% end %>
+			
+		<label for="yes">Yes</label>
+			<input type="radio" name="confirm_quantity" value="yes" required>
+		<label for="no">No</label>
+			<input type="radio" name="confirm_quantity" value="no">
+	</div>
+
+	<hr>
+	
+	<div class="confirm_size">
+			<%= p_size.capitalize %>
+			<label for="yes">Yes</label>
+				<input type="radio" name="confirm_size" value="yes">
+			<label for="no">No</label>
+				<input type="radio" name="confirm_size" value="no">
+	</div>
+
+	<hr>
+	
+	<div class="confirm_crust">
+			<%= p_crust.capitalize %>
+			<label for="yes">Yes</label>
+				<input type="radio" name="confirm_crust" value="yes">
+			<label for="no">No</label>
+				<input type="radio" name="confirm_crust" value="no">
+	</div>
+
+	<hr>
+
+	<div class="confirm_topping">
+			<% toppings.each do |top| %><br>
+				<%= top.capitalize %>
+			<label for="yes">Yes</label>
+				<input type="radio" name="confirm_topping" value="yes">
+			<label for="no">No</label>
+				<input type="radio" name="confirm_topping" value="no">
+			<%end%>
+	</div>
+
+	<hr>
+
+	<div class="confirm_delivery">
+		<%= p_delivery.capitalize %>
+		<label for="yes">Yes</label>
+				<input type="radio" name="confirm_delivery" value="yes">
+			<label for="no">No</label>
+				<input type="radio" name="confirm_delivery" value="no">
+	</div>
+	</center>
+	<button class="button">Submit</button>
+</form>
