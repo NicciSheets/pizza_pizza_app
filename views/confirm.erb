@@ -22,7 +22,7 @@ form {
 				<%= "#{p_quantity} Pizzas" %>
 			<% else %>
 				<%= "#{p_quantity} Pizza" %>
-			<% end %>
+			<% end %><br>
 			
 		<label for="yes">Yes</label>
 			<input type="radio" name="confirm_quantity" value="yes" required>
@@ -33,7 +33,7 @@ form {
 	<hr>
 	
 	<div class="confirm_size">
-			<%= p_size.capitalize %>
+			<%= p_size.capitalize %><br>
 			<label for="yes">Yes</label>
 				<input type="radio" name="confirm_size" value="yes" required>
 			<label for="no">No</label>
@@ -43,7 +43,7 @@ form {
 	<hr>
 	
 	<div class="confirm_crust">
-			<%= p_crust.capitalize %>
+			<%= p_crust.capitalize %><br>
 			<label for="yes">Yes</label>
 				<input type="radio" name="confirm_crust" value="yes" required>
 			<label for="no">No</label>
@@ -53,19 +53,19 @@ form {
 	<hr>
 
 	<div class="confirm_topping">
-			<% toppings.each do |top| %><br>
+			<% toppings.each do |top| %>
 				<%= top.capitalize %>
+			<%end%><br>
 			<label for="yes">Yes</label>
 				<input type="radio" name="confirm_topping" value="yes" required>
 			<label for="no">No</label>
 				<input type="radio" name="confirm_topping" value="no">
-			<%end%>
 	</div>
 
 	<hr>
 
 	<div class="confirm_delivery">
-		<%= p_delivery.capitalize %>
+		<%= p_delivery.capitalize %><br>
 		<label for="yes">Yes</label>
 				<input type="radio" name="confirm_delivery" value="yes" required>
 			<label for="no">No</label>
