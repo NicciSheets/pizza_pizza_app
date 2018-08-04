@@ -29,10 +29,9 @@ get '/confirm_page' do
 	toppings = eval(p_toppings)
 	p "p_toppings is #{p_toppings} and its class is #{p_toppings.class}"
 	p_delivery = total.values[4]
-	p_total = total.values[5]
-	p_session = session[:p_total]
-	p "p_total session is #{p_total}"
-	erb :confirm, locals:{total: total, p_quantity: p_quantity, p_size: p_size, p_crust: p_crust, toppings: toppings, p_delivery: p_delivery, p_session: p_session} 
+	session[:p_total] = total.values[5]
+	p "p_total params are #{session[:p_total]}"
+	erb :confirm, locals:{total: total, p_quantity: p_quantity, p_size: p_size, p_crust: p_crust, toppings: toppings, p_delivery: p_delivery} 
 end
 
 post '/confirm_page' do
@@ -41,6 +40,7 @@ post '/confirm_page' do
 	confirm_crust = params[:confirm_crust]
 	confirm_topping = params[:confirm_topping]
 	confirm_delivery = params[:confirm_delivery]
+	#p_total = params[:p_total]
 	p "confirm_quantity is #{confirm_quantity} and its class is #{confirm_quantity.class}"
 	confirm_arr = []
 	confirm_arr << confirm_quantity << confirm_size << confirm_crust << confirm_topping << confirm_delivery
@@ -59,7 +59,12 @@ get '/pizza_options' do
 end
 
 get '/total_page' do
-	p_session = params[:p_session]
-	erb :total, locals:{p_session: p_session}
+	p "params in total page get are #{session[:p_total]}"
+	p_total = session[:p_total]
+	erb :total, locals:{p_total: p_total}
 end
 
+post '/total_page' do
+	
+	redirect '/total'
+end
