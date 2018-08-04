@@ -1,7 +1,28 @@
 <link rel="stylesheet" type="text/css" href="/css/layout.css">
+<style>
+body {
+	background-image: url(/img/pizza_3.jpg);
+	background-size: cover;
+}	
+
+form {
+	   background-color: #c84327e6;
+    color: #f4e5ce;
+    border-style: groove;
+    text-align: center;
+    font-size: 40px;
+    float: right;
+    width: 33%;
+    margin-top: 140px;
+    padding: 20px;
+    border-color: antiquewhite;
+}
+
+
+</style>
 
 <form method="post" action="total_page">
-	<%= "Your total will be #{p_total}" %>
-	
+	<%= "Your total will be $#{p_total}" %>
+
 
 </form>
