@@ -10,67 +10,73 @@ form {
     padding: 30px;
     width: 40%;
 }
+label{
+		font-size: 22px;
+}
 
 </style>
 
 <form method="post" action="confirm_page">
 	<center>
-		<p>Please confirm your order below:</p>
-	<div class="confirm_quantity">
+		<p style="font-size:28px; font-weight:bold;">Please confirm your order below:</p>
+	<div class="confirm_quantity" style="font-size:26px; font-style:italic;">
 			<% p_quantity.to_i %>
 			<% if p_quantity.to_i > 1 %>
 				<%= "#{p_quantity} Pizzas" %>
 			<% else %>
 				<%= "#{p_quantity} Pizza" %>
 			<% end %><br>
-			
-		<label for="yes">Yes</label>
-			<input type="radio" name="confirm_quantity" value="yes" required>
-		<label for="no">No</label>
-			<input type="radio" name="confirm_quantity" value="no">
 	</div>
+		<input type="radio" style="width:15px; height:15px;" name="confirm_quantity" value="yes" required>
+			<label for="yes">Yes</label>
+		<input type="radio" style="width:15px; height:15px;" name="confirm_quantity" value="no">	
+			<label for="no">No</label>
 
 	<hr>
 	
-	<div class="confirm_size">
+	<div class="confirm_size" style="font-size:26px; font-style:italic;">
 			<%= p_size.capitalize %><br>
-			<label for="yes">Yes</label>
-				<input type="radio" name="confirm_size" value="yes" required>
-			<label for="no">No</label>
-				<input type="radio" name="confirm_size" value="no">
 	</div>
-
+		<input type="radio" style="width:15px; height:15px;" name="confirm_size" value="yes" required>
+			<label for="yes">Yes</label>
+		<input type="radio" style="width:15px; height:15px;" name="confirm_size" value="no">		
+			<label for="no">No</label>
+				
 	<hr>
 	
-	<div class="confirm_crust">
+	<div class="confirm_crust" style="font-size:26px; font-style:italic;">
 			<%= p_crust.capitalize %><br>
-			<label for="yes">Yes</label>
-				<input type="radio" name="confirm_crust" value="yes" required>
-			<label for="no">No</label>
-				<input type="radio" name="confirm_crust" value="no">
 	</div>
-
+		<input type="radio" style="width:15px; height:15px;" name="confirm_crust" value="yes" required>
+			<label for="yes">Yes</label>
+		<input type="radio" style="width:15px; height:15px;" name="confirm_crust" value="no">		
+			<label for="no">No</label>
+				
 	<hr>
 
-	<div class="confirm_topping">
+	<div class="confirm_topping" style="font-size:26px; font-style:italic;">
 			<% toppings.each do |top| %>
-				<%= top.capitalize %>
+				<%="#{top.capitalize}," %>
+			<% unless toppings.last %>
+				<%= toppings.last.capitalize %>
+				<% end %>
 			<%end%><br>
-			<label for="yes">Yes</label>
-				<input type="radio" name="confirm_topping" value="yes" required>
-			<label for="no">No</label>
-				<input type="radio" name="confirm_topping" value="no">
 	</div>
-
+		<input type="radio" style="width:15px; height:15px;" name="confirm_topping" value="yes" required>
+			<label for="yes">Yes</label>
+		<input type="radio" style="width:15px; height:15px;" name="confirm_topping" value="no">		
+			<label for="no">No</label>
+			
 	<hr>
 
-	<div class="confirm_delivery">
+	<div class="confirm_delivery" style="font-size:26px; font-style:italic;">
 		<%= p_delivery.capitalize %><br>
-		<label for="yes">Yes</label>
-				<input type="radio" name="confirm_delivery" value="yes" required>
-			<label for="no">No</label>
-				<input type="radio" name="confirm_delivery" value="no">
 	</div>
+		<input type="radio"style="width:15px; height:15px;" name="confirm_delivery" value="yes" required>
+			<label for="yes">Yes</label>
+		<input type="radio" style="width:15px; height:15px;" name="confirm_delivery" value="no">		
+			<label for="no">No</label>
+			
 	</center>
 	<br>
 	<button class="button">Submit</button>
