@@ -24,8 +24,10 @@ form {
 <form method="post" action="total_page">
 	<% if p_total.to_s[-1] == "0" %>
 			<% pp_total = p_total.to_s.insert(-1, "0") %>
+			<%= pp_total %>
 	<% else %>
 			<% pp_total = p_total %>
+			<%= pp_total %>
 	<% end %>
 		
 	<% delivery_array.each do |option| %>
