@@ -8,12 +8,22 @@
  	<div class="welcome">
  		<p> Welcome! How would you like to enjoy a Little Slice of Heaven?  </p><br>
  	</div>	
- 		<input type="radio" style="width:15px; height:15px;" name="delivery_option" id="carry_out" value="carryout" onclick='info(1); InfoToo(0)'>
+ 		<input type="radio" style="width:15px; height:15px;" name="delivery_option" id="carry_out" value="carryout" onclick='info(1); infoToo(0);'>
 			<label for="carryout"> Carryout </label><br>
-		<input type="radio" style="width:15px; height:15px;" name="delivery_option" id="no_dining_room" value="delivery" onclick='info(0); InfoToo(1)'>		
-		<label for="delivery"> Delivery ($5.00 Fee) </label><br>
+		<input type="radio" style="width:15px; height:15px;" name="delivery_option" id="no_dining_room" value="delivery" onclick='info(0); infoToo(1)'>		
+			<label for="delivery"> Delivery ($5.00 Fee) </label><br>	
+	
+
+
+
+	<div class="location_info" id="location">
+		<p>We are conveniently located in downtown Logan, WV.</p>
+		<p>Please submit your name and phone number to continue your order:</p>
+		<input type="text" placeholder="Name" name="customer" required><br>
+		<input type="tel" placeholder="Telephone Number" name="phone" required><br>
+		<input type="hidden" name="address">
+	</div>
 					
-		
 	
 	<div class="delivery_info" id="delivery">
 		<p>Please submit your name, street address and phone number for delivery:</p>
@@ -22,12 +32,10 @@
 	    <input type="tel" placeholder="Telephone Number" name="phone" required><br>
 	</div>
 
-	<div class="location_info" id="location">
-		<p>We are conveniently located in downtown Logan, WV.</p>
-		<p>Please submit your name and phone number to continue your order:</p>
-		<input type="text" placeholder="Name" name="customer" required><br>
-		<input type="tel" placeholder="Telephone Number" name="phone" required><br>
-	</div>
+	
 <button class='button'>Submit</button>
 	</center>	
 </form>
+
+
+<!-- I can't get this to pass to second page without filling in all forms on both carryout and delivery, need to figure that out.  Also, on my last page, it is not displaying my address when I call it. -->

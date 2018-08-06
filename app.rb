@@ -89,6 +89,8 @@ get '/total_page' do
 	customer = session[:customer]
 	address = session[:address]
 	phone = session[:phone]
+	p "params in total page for customer are #{session[:customer]}"
+	p "params in total page for address are #{session[:address]}"
 	delivery = session[:delivery]
 	erb :total, locals:{p_total: p_total, customer: customer, address: address, phone: phone, delivery: delivery}
 end
