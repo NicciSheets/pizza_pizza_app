@@ -22,14 +22,19 @@ form {
 </style>
 
 <form method="post" action="total_page">
+	<% if p_total.to_s[-1] == "0" %>
+			<% pp_total = p_total.to_s.insert(-1, "0") %>
+	<% else %>
+			<% pp_total = p_total %>
+	<% end %>
+		
 	<% delivery_array.each do |option| %>
 		<% if option == "delivery" %>
-			<%= "Thank you #{customer2.capitalize}!<br>Your total will be $#{p_total}.<br>Delivery Confirmation: #{address2}." %>
+			<%= "Thank you #{customer2.capitalize}!<br>Your total will be $#{pp_total}.<br>Delivery Confirmation: #{address2}." %>
 		<% else %>
-			<%= "Thank you #{customer.capitalize}! Your total will be $#{p_total}." %>
+			<%= "Thank you #{customer.capitalize}! Your total will be $#{pp_total}." %>
 		<% end %>
 		<% end %>
-	
 
 </form> 
 
