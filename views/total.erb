@@ -22,7 +22,7 @@ form {
 </style>
 
 <form method="post" action="total_page">
-	<% if p_total.to_s[-1] == "0" %>
+	<% if p_total.to_s[-2] == "." %>
 			<% pp_total = p_total.to_s.insert(-1, "0") %>
 			<%= pp_total %>
 	<% else %>
