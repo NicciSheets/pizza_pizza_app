@@ -1,16 +1,20 @@
-function valthis() {
-var checkBoxes = document.getElementsByClassName( 'topping_choices' );
-var isChecked = false;
-    for (var i = 0; i < checkBoxes.length; i++) {
-        if ( checkBoxes[i].checked ) {
-            isChecked = true;
-        }
-    }
-    if ( isChecked ) {
-        
-        } else {
-            alert( 'Please check at least one checkbox!' );
-        }   
+function val(){
+var chks = document.getElementsByName('toppings[]');
+var hasChecked = false;
+for (var i = 0; i < chks.length; i++)
+{
+if (chks[i].checked)
+{
+hasChecked = true;
+break;
+}
+}
+if (hasChecked == false)
+{
+    alert("Please select at least one topping.");
+    return false;
+}
+return true;
 }
 
 
