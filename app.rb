@@ -4,24 +4,44 @@ require_relative 'pizza_app.rb'
 
 enable :sessions
 
-get '/' do
-  
-  erb :options
+get '/' do 
+	delivery_option = session[:delivery_option]
+	customer = session[:customer]
+	erb :intro, locals:{delivery_option: delivery_option, customer: customer}
 end
 
+post '/intro_page' do
+	session[:delivery_option] = params[:delivery_option]
+	session[:customer] = params[:customer]
+	session[:address] = params[:address]
+	session[:phone] = params[:phone]
+	p "customer params in intro page are #{session[:customer]}"
+	p "delivery_option in intro page are #{session[:delivery_option]}"
+	p "address in intro page are#{session[:address]}"
+	p "phone in intro page are #{session[:phone]}"
+	redirect 'pizza_options'
+end
+
+get '/pizza_options' do
+
+	erb :options
+end
+
+
+
 post '/pizza_options' do
-	delivery_option = params[:delivery_option]
+	# delivery_option = params[:delivery_option]
 	pizza_size  = params[:pizza_size]
 	pizza_quantity = params[:how_many]
 	pizza_crust = params[:crust_type]
 	pizza_toppings = params[:toppings].to_s
 	p "params in pizza options are #{params}"
-	redirect '/confirm_page?delivery_option=' + delivery_option + '&pizza_size=' + pizza_size + '&pizza_quantity=' + pizza_quantity + '&pizza_crust=' + pizza_crust + '&pizza_toppings=' + pizza_toppings
+	redirect '/confirm_page?&pizza_size=' + pizza_size + '&pizza_quantity=' + pizza_quantity + '&pizza_crust=' + pizza_crust + '&pizza_toppings=' + pizza_toppings
 end
 
 get '/confirm_page' do
 	p "params in cofirm page get #{params}"
-	total = final_total(params[:pizza_toppings], params[:pizza_crust], params[:pizza_quantity], params[:delivery_option], params[:pizza_size])
+	total = final_total(params[:pizza_toppings], params[:pizza_crust], params[:pizza_quantity], session[:delivery_option], params[:pizza_size])
 	p_quantity = total.values[0]
 	p_size = total.values[1]
 	p_crust = total.values[2]
@@ -66,7 +86,11 @@ end
 get '/total_page' do
 	p "params in total page get are #{session[:p_total]}"
 	p_total = session[:p_total]
-	erb :total, locals:{p_total: p_total}
+	customer = session[:customer]
+	address = session[:address]
+	phone = session[:phone]
+	delivery = session[:delivery]
+	erb :total, locals:{p_total: p_total, customer: customer, address: address, phone: phone, delivery: delivery}
 end
 
 post '/total_page' do

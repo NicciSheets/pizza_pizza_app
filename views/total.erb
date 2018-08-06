@@ -22,7 +22,10 @@ form {
 </style>
 
 <form method="post" action="total_page">
-	<%= "Your total will be $#{p_total}." %>
+	<%= "Thank you #{customer.capitalize}!" %>
+	<%= "Your total will be #{p_total}." %>
+	<% if delivery == "delivery" %>
+		<%= "Delivery Confirmation: #{address}." %>
 
 
 </form>

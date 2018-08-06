@@ -12,3 +12,20 @@ var isChecked = false;
             alert( 'Please check at least one checkbox!' );
         }   
 }
+
+
+function info(x) {
+    if (x==0)
+        document.getElementById('delivery').style.display='block';
+    else
+        document.getElementById('delivery').style.display='none';
+    return;
+    }
+
+function infoToo(x) {
+    if (x==0)
+        document.getElementById('location').style.display='block';
+    else
+        document.getElementById('location').style.display='none';
+    return;
+}
