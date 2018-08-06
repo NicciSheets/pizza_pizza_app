@@ -5,21 +5,22 @@ require_relative 'pizza_app.rb'
 enable :sessions
 
 get '/' do 
-	delivery_option = session[:delivery_option]
-	customer = session[:customer]
-	erb :intro, locals:{delivery_option: delivery_option, customer: customer}
+	erb :intro
 end
 
 post '/intro_page' do
 	session[:delivery_option] = params[:delivery_option]
+	session[:customer2] = params[:customer2]
+	session[:address2] = params[:address2]
+	session[:phone2] = params[:phone2]
 	session[:customer] = params[:customer]
-	session[:address] = params[:address]
 	session[:phone] = params[:phone]
 	p "customer params in intro page are #{session[:customer]}"
 	p "delivery_option in intro page are #{session[:delivery_option]}"
 	p "address in intro page are#{session[:address]}"
 	p "phone in intro page are #{session[:phone]}"
-	redirect 'pizza_options'
+	p "phone2 in intro page is #{session[:phone2]}"
+	redirect '/pizza_options'
 end
 
 get '/pizza_options' do
@@ -85,17 +86,26 @@ end
 
 get '/total_page' do
 	p "params in total page get are #{session[:p_total]}"
+	delivery_array = []
 	p_total = session[:p_total]
 	customer = session[:customer]
-	address = session[:address]
+	customer2 = session[:customer2]
+	address2 = session[:address2]
 	phone = session[:phone]
-	p "params in total page for customer are #{session[:customer]}"
+	phone2 = session[:phone2]
+	delivery = session[:delivery_option]
+	delivery_array << delivery
+	p "params in total page for customer are #{session[:customer2]}"
+	p "params in total page for carryout customer are #{session[:customer]}"
 	p "params in total page for address are #{session[:address]}"
-	delivery = session[:delivery]
-	erb :total, locals:{p_total: p_total, customer: customer, address: address, phone: phone, delivery: delivery}
+	p "delivery_array is #{delivery_array.class}"
+	
+	erb :total, locals:{p_total: p_total, customer: customer, address2: address2, phone: phone, delivery_array: delivery_array, customer2: customer2, phone2: phone2}
 end
 
 post '/total_page' do
 
 	redirect '/total'
 end
+
+# params on first page are not showing up for carryout name, phone number
