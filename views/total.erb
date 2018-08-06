@@ -24,7 +24,7 @@ form {
 <form method="post" action="total_page">
 	<% delivery_array.each do |option| %>
 		<% if option == "delivery" %>
-			<%= "Thank you #{customer2.capitalize}! Your total will be $#{p_total}. Delivery Confirmation: #{address2}." %>
+			<%= "Thank you #{customer2.capitalize}!<br>Your total will be $#{p_total}.<br>Delivery Confirmation: #{address2}." %>
 		<% else %>
 			<%= "Thank you #{customer.capitalize}! Your total will be $#{p_total}." %>
 		<% end %>

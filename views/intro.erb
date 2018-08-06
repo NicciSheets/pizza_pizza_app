@@ -1,5 +1,10 @@
 <head>
 
+<style>
+body {
+	font-family: verdana;
+}
+
 </style>
 </head>
 <body>
@@ -8,9 +13,9 @@
  	<div class="welcome">
  		<p> Welcome! How would you like to enjoy a Little Slice of Heaven?  </p><br>
  	</div>	
- 		<input type="radio" style="width:15px; height:15px;" name="delivery_option" id="carry_out" value="carryout" onclick='info(1); infoToo(0);'>
+ 		<input type="radio" style="width:15px; height:15px;" name="delivery_option" id="carry_out" value="carryout" onchange='info(1); infoToo(0);'>
 			<label for="carryout"> Carryout </label><br>
-		<input type="radio" style="width:15px; height:15px;" name="delivery_option" id="no_dining_room" value="delivery" onclick='info(0); infoToo(1)'>		
+		<input type="radio" style="width:15px; height:15px;" name="delivery_option" id="no_dining_room" value="delivery" onchange='info(0); infoToo(1)'>		
 			<label for="delivery"> Delivery ($5.00 Fee) </label><br>	
 	
 
