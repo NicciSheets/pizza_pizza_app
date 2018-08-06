@@ -19,7 +19,7 @@ body {
 	    background-color: #f4e5ce
 }
 
-.button {
+.submit {
     	display: inline-block;
     padding: 10px 16px;
     font-size: 24px;
@@ -33,11 +33,11 @@ body {
 }
 
 
-.button:hover {
+.submit:hover {
 		background-color: white
 }
 
-.button:active {
+.submit:active {
   		background-color: #3e8e41;
   transform: translateY(4px);
 }
@@ -58,56 +58,56 @@ label {
 <hr/>
 	<div class="size_button">
 		<p style="font-size:28px; font-weight:bold;"> Please pick a size: </p>
-		<input type="radio" style="width:15px; height:15px;" name="pizza_size" id="small_pizza" value="small" required>
+		<input type="radio" style="width:15px; height:15px;" name="pizza_size" id="small_pizza" value="Small" required>
 			<label for="small"> Small - $5.00 </label><br>
-		<input type="radio" style="width:15px; height:15px;" name="pizza_size" id="med_pizza" value="medium">		
+		<input type="radio" style="width:15px; height:15px;" name="pizza_size" id="med_pizza" value="Medium">		
 			<label for="medium"> Medium - $7.00 </label><br>
-		<input type="radio" style="width:15px; height:15px;" name="pizza_size" id="lg_pizza" value="large">
+		<input type="radio" style="width:15px; height:15px;" name="pizza_size" id="lg_pizza" value="Large">
 			<label for="large"> Large - $9.00 </label><br>
 	</div>
 <hr/>
 	<div class="crust_style">
 		<p style="font-size:28px; font-weight:bold;"> Please choose your crust: </p>
-		<input type="radio" style="width:15px; height:15px;" name="crust_type" id="hand" value="hand tossed" required>
+		<input type="radio" style="width:15px; height:15px;" name="crust_type" id="hand" value="Hand Tossed" required>
 			<label for="hand tossed"> Hand Tossed </label><br>
-		<input type="radio" style="width:15px; height:15px;" name="crust_type" id="pan" value="pan crust">		
+		<input type="radio" style="width:15px; height:15px;" name="crust_type" id="pan" value="Pan Crust">		
 			<label for="pan crust"> Pan Crust ($1.00/Pizza) </label><br>					
 	</div>
 <hr/>
 	<div class="topping_choices">
 		<p style="font-size:28px; font-weight:bold;"> Please choose which toppings you would like: </p>
 		<div class="meats">
-			<input type="checkbox" style="width:15px; height:15px;" name="toppings[]" id="pepp" value="pepperoni" class="topping_choices">
+			<input type="checkbox" style="width:15px; height:15px;" name="toppings[]" id="pepp" value="Pepperoni" class="topping_choices">
 				<label for="pepperoni"> Pepperoni ($0.50/Pizza) </label><br>
-			<input type="checkbox" style="width:15px; height:15px;" name="toppings[]" id="saus" value="sausage" class="topping_choices">
+			<input type="checkbox" style="width:15px; height:15px;" name="toppings[]" id="saus" value="Sausage" class="topping_choices">
 				<label for="sausage"> Sausage ($0.50/Pizza) </label><br>
-			<input type="checkbox" style="width:15px; height:15px;" name="toppings[]" id="ham" value="ham" class="topping_choices">	
+			<input type="checkbox" style="width:15px; height:15px;" name="toppings[]" id="ham" value="Ham" class="topping_choices">	
 				<label for="ham"> Ham ($0.75/Pizza) </label><br>
-			<input type="checkbox" style="width:15px; height:15px;" name="toppings[]" id="bacon" value="bacon" class="topping_choices">					
+			<input type="checkbox" style="width:15px; height:15px;" name="toppings[]" id="bacon" value="Bacon" class="topping_choices">					
 				<label for="bacon"> Bacon ($0.75/Pizza) </label><br>
 		</div>
 		<div class="veggies">
-			<input type="checkbox" style="width:15px; height:15px;" name="toppings[]" id="gpepp" value="green peppers" class="topping_choices">
+			<input type="checkbox" style="width:15px; height:15px;" name="toppings[]" id="gpepp" value="Green Peppers" class="topping_choices">
 				<label for="green_peppers"> Green Peppers ($0.25/Pizza) </label><br>
-			<input type="checkbox" style="width:15px; height:15px;" name="toppings[]" id="bpepp" value="banana peppers" class="topping_choices">		
+			<input type="checkbox" style="width:15px; height:15px;" name="toppings[]" id="bpepp" value="Banana Peppers" class="topping_choices">		
 				<label for="banana_peppers"> Banana Peppers ($0.25/Pizza) </label><br>
-			<input type="checkbox" style="width:15px; height:15px;" name="toppings[]" id="mush" value="mushrooms" class="topping_choices">		
+			<input type="checkbox" style="width:15px; height:15px;" name="toppings[]" id="mush" value="Mushrooms" class="topping_choices">		
 				<label for="mushrooms"> Mushrooms ($0.25/Pizza) </label><br>
-			<input type="checkbox" style="width:15px; height:15px;" name="toppings[]" id="olive" value="olives" class="topping_choices">		
+			<input type="checkbox" style="width:15px; height:15px;" name="toppings[]" id="olive" value="Olives" class="topping_choices">		
 				<label for="olives"> Olives ($0.25/Pizza) </label><br>
-			<input type="checkbox" style="width:15px; height:15px;" name="toppings[]" id="onion" value="onions" class="topping_choices">		
+			<input type="checkbox" style="width:15px; height:15px;" name="toppings[]" id="onion" value="Onions" class="topping_choices">		
 				<label for="onions"> Onions ($0.25/Pizza) </label><br>
 					
 		</div>
 		<div class="extras">
-			<input type="checkbox" style="width:15px; height:15px;" name="toppings[]" id="pine" value="pineapple" class="topping_choices">
+			<input type="checkbox" style="width:15px; height:15px;" name="toppings[]" id="pine" value="Pineapple" class="topping_choices">
 				<label for="pineapple"> Pineapple ($1.00/Pizza) </label><br>
-			<input type="checkbox" style="width:15px; height:15px;" name="toppings[]" id="exchez" value="extra cheese" class="topping_choices">		
+			<input type="checkbox" style="width:15px; height:15px;" name="toppings[]" id="exchez" value="Extra Cheese" class="topping_choices">		
 				<label for="extra_cheese"> Extra Cheese ($1.00/Pizza) </label><br>
 					
 		</div>
 		<div class="none">
-			<input type="checkbox" style="width:15px; height:15px;" name="toppings[]" id="none" value="none" class="topping_choices">
+			<input type="checkbox" style="width:15px; height:15px;" name="toppings[]" id="none" value="No Toppings" class="topping_choices">
 				<label for="none"> No Toppings </label><br>					
 		</div>
 	</div>
