@@ -11,7 +11,7 @@ break;
 }
 if (hasChecked == false)
 {
-    alert("Please select a topping.<br>(For no additional toppings, please select 'No Toppings'.)");
+    alert("Please select a topping.");
     return false;
 }
 return true;
