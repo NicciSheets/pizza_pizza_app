@@ -16,8 +16,10 @@ post '/intro_page' do
 	session[:customer] = params[:customer]
 	session[:phone] = params[:phone]
 	p "customer params in intro page are #{session[:customer]}"
+	p "customer 2 params for delivery are #{session[:customer2]}"
 	p "delivery_option in intro page are #{session[:delivery_option]}"
 	p "address in intro page are#{session[:address]}"
+	p "address in delivery are #{session[:address2]}"
 	p "phone in intro page are #{session[:phone]}"
 	p "phone2 in intro page is #{session[:phone2]}"
 	redirect '/pizza_options'
@@ -97,7 +99,9 @@ get '/total_page' do
 	delivery_array << delivery
 	p "params in total page for customer are #{session[:customer2]}"
 	p "params in total page for carryout customer are #{session[:customer]}"
-	p "params in total page for address are #{session[:address]}"
+	p "params in total page for address are #{session[:address2]}"
+	p "params in total page for delivery phone is #{session[:phone2]}"
+	p "params in total page for carryout phone is #{session[:phone]}"
 	p "delivery_array is #{delivery_array.class}"
 	
 	erb :total, locals:{p_total: p_total, customer: customer, address2: address2, phone: phone, delivery_array: delivery_array, customer2: customer2, phone2: phone2}

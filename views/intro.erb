@@ -46,26 +46,6 @@ body {
 	    <input type="text" placeholder="Street Address" name="address2" style="height:28px;width:30%;text-align:center;font-size:18px"><br>
 	    <input type="tel" placeholder="Telephone Number" name="phone2" minlength="7" maxlength="10" style="height:28px;width:30%;text-align:center;font-size:18px"><br>
 	</div>
-</div>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script>
-            $("#no_dining_room").click(function() {
-                $(".carry").prop("required", true);
-                $(".carry").prop("disabled", false);  
-            });
-            $("#carry_out").click(function() {
-                $(".carry").prop("required", false);
-                $(".carry").prop("disabled", true);  
-            });
-            $("#no_dining_room").click(function() {
-                $(".delivery").prop("required", true);
-                $(".delivery").prop("disabled", false);  
-            });
-            $("#carry_out").click(function() {
-                $(".delivery").prop("required", false);
-                $(".delivery").prop("disabled", true);  
-            });
-		</script>
 <br><button class="button">Submit</button>
 	</center>	
 </form>
