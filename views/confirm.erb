@@ -27,7 +27,7 @@ img {
 	<p class="small_headings">Please confirm your order below:</p>
 	
 	<div class="confirmations">
-		<%= p_delivery.capitalize %><br>
+		<%= p_delivery %><br>
 	</div>
 		<input type="radio" name="confirm_delivery" value="yes" required checked style="width:15px;height:15px;">
 			<label for="yes">Yes</label>
@@ -52,7 +52,7 @@ img {
 	<hr>
 	
 	<div class="confirmations">
-			<%= p_size.capitalize %><br>
+			<%= p_size %><br>
 	</div>
 		<input type="radio" name="confirm_size" value="yes" required checked style="width:15px;height:15px;">
 			<label for="yes">Yes</label>
@@ -62,7 +62,7 @@ img {
 	<hr>
 	
 	<div class="confirmations">
-			<%= p_crust.capitalize %><br>
+			<%= p_crust %><br>
 	</div>
 		<input type="radio" name="confirm_crust" value="yes" required checked style="width:15px;height:15px;">
 			<label for="yes">Yes</label>
@@ -73,7 +73,7 @@ img {
 
 	<div class="confirmations">
 			<% toppings.each do |top| %>
-				<%="#{top.capitalize}" %><br>
+				<%="#{top}" %><br>
 					<% if top == "Pepperoni" %>
 						<img src="/img/pepperoni.png" alt="Pepperoni Icon"><br>
 					<% elsif top == "Sausage" %>

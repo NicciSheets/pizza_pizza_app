@@ -24,7 +24,7 @@ body {
  	</div>	
  		<input type="radio" name="delivery_option" id="carry_out" value="Carryout" onchange='info(1); infoToo(0);' style="width:15px;height:15px;" required>
 			<label for="carryout"> Carryout </label><br>
-		<input type="radio" name="delivery_option" id="no_dining_room" value="Delivery" onchange='info(0); infoToo(1)' style="width:15px;height:15px;">		
+		<input type="radio" name="delivery_option" id="no_dining_room" value="Delivery" onchange='info(0); infoToo(1);' style="width:15px;height:15px;">		
 			<label for="delivery"> Delivery ($3.00 Fee) </label><br><br>
 	
 
@@ -36,6 +36,7 @@ body {
 	</div><div class="carryout_boxes">
 		<input type="text" placeholder="Name" name="customer" style="height:28px;width:30%;text-align:center;font-size:18px"><br>
 		<input type="tel" placeholder="Telephone Number" name="phone" minlength="7" maxlength="10" style="height:28px;width:30%;text-align:center;font-size:18px"><br>
+		<br><button class="button">Submit</button>
 	</div>
 </div>					
 <div class="delivery" id="delivery"  style="display:none">
@@ -45,8 +46,9 @@ body {
 	    <input type="text" placeholder="Name" name="customer2" style="height:28px;width:30%;text-align:center;font-size:18px"><br>
 	    <input type="text" placeholder="Street Address" name="address2" style="height:28px;width:30%;text-align:center;font-size:18px"><br>
 	    <input type="tel" placeholder="Telephone Number" name="phone2" minlength="7" maxlength="10" style="height:28px;width:30%;text-align:center;font-size:18px"><br>
+	    <br><button class="button">Submit</button>
 	</div>
-<br><button class="button">Submit</button>
+
 	</center>	
 </form>
 
