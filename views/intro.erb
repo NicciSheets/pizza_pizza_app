@@ -1,58 +1,73 @@
-<head>
-
+<link rel="stylesheet" type="text/css" href="/css/styles.css">
 <style>
 body {
-	font-family: verdana;
-}
-body {
-	background-image: url(/img/first.jpg);
+		background-image: url(/img/first.jpg);
 	background-size: cover;
+	font-family: verdana;
 }
 
 .first {
-	background-color: #aa8c79db;
+		background-color: #e6e1dcdb;
     width: 50%;
     height: auto;
+    border-style: double;
+    border-width: thick;
+    padding: 3%;
 }
 
-label {
-		font-size: 22px;
-}
 </style>
-</head>
 <body>
 <form method="post" class="first" action="intro_page">
  	<center>
  	<div class="welcome">
- 		<p style="font-size:28px; font-weight:bold;"> Welcome! How would you like to enjoy a Little Slice of Heaven?  </p><br>
+ 		<p class="small_headings"> How are you enjoying a Little Slice of Heaven?  </p>
  	</div>	
- 		<input type="radio" style="width:15px; height:15px;" name="delivery_option" id="carry_out" value="carryout" onchange='info(1); infoToo(0);'>
+ 		<input type="radio" name="delivery_option" id="carry_out" value="Carryout" onchange='info(1); infoToo(0);' style="width:15px;height:15px;">
 			<label for="carryout"> Carryout </label><br>
-		<input type="radio" style="width:15px; height:15px;" name="delivery_option" id="no_dining_room" value="delivery" onchange='info(0); infoToo(1)'>		
-			<label for="delivery"> Delivery ($5.00 Fee) </label><br>	
+		<input type="radio" name="delivery_option" id="no_dining_room" value="Delivery" onchange='info(0); infoToo(1)' style="width:15px;height:15px;">		
+			<label for="delivery"> Delivery ($3.00 Fee) </label><br><br>
 	
 
 
-
-	<div class="location_info" id="location" style="display: none">
-		<p style="font-size:28px; font-weight:bold;">We are conveniently located in downtown Logan, WV.</p>
-		<p style="font-size:28px; font-weight:bold;">Please submit your name and phone number to continue your order:</p>
-		<input type="text" placeholder="Name" name="customer" minlength="1"><br>
-		<input type="tel" placeholder="Telephone Number" name="phone" minlength="10" maxlength="10"><br>
+<div class="carry" id="location" style="display: none">
+	<div class="location_info">
+		<p class="small_headings">We are conveniently located in downtown Logan, WV.</p>
+		<p class="small_headings">Please submit your name and phone number to continue your order:</p>
+	</div><div class="carryout_boxes">
+		<input type="text" placeholder="Name" name="customer" style="height:28px;width:30%;text-align:center;font-size:18px"><br>
+		<input type="tel" placeholder="Telephone Number" name="phone" minlength="7" maxlength="10" style="height:28px;width:30%;text-align:center;font-size:18px"><br>
 	</div>
-					
-	
-	<div class="delivery_info" id="delivery" style="display: none">
-		<p style="font-size:28px; font-weight:bold;">Please submit your name, street address and phone number for delivery:</p>
-	    <input type="text" placeholder="Name" name="customer2" minlength="1"><br>
-	    <input type="text" placeholder="Street Address" name="address2" minlength="1"><br>
-	    <input type="tel" placeholder="Telephone Number" name="phone2" minlength="10" maxlength="10"><br>
+</div>					
+<div class="delivery" id="delivery"  style="display:none">
+	<div class="delivery_info">
+		<p class="small_headings">Please submit your name, street address and phone number for delivery:</p>
+	</div><div class="delivery_boxes">
+	    <input type="text" placeholder="Name" name="customer2" style="height:28px;width:30%;text-align:center;font-size:18px"><br>
+	    <input type="text" placeholder="Street Address" name="address2" style="height:28px;width:30%;text-align:center;font-size:18px"><br>
+	    <input type="tel" placeholder="Telephone Number" name="phone2" minlength="7" maxlength="10" style="height:28px;width:30%;text-align:center;font-size:18px"><br>
 	</div>
-
-	
-<button class="button">Submit</button>
+</div>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script>
+            $("#no_dining_room").click(function() {
+                $(".carry").prop("required", true);
+                $(".carry").prop("disabled", false);  
+            });
+            $("#carry_out").click(function() {
+                $(".carry").prop("required", false);
+                $(".carry").prop("disabled", true);  
+            });
+            $("#no_dining_room").click(function() {
+                $(".delivery").prop("required", true);
+                $(".delivery").prop("disabled", false);  
+            });
+            $("#carry_out").click(function() {
+                $(".delivery").prop("required", false);
+                $(".delivery").prop("disabled", true);  
+            });
+		</script>
+<br><button class="button">Submit</button>
 	</center>	
 </form>
 
 
-<!-- Couldn't require these input fields without requiring user to input both carryout and delivery boxes - unsure how to make sure the user fills them out.  Also need to work on the total page, withholding the delivery confirmation statement if carryout.

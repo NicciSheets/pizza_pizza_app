@@ -6,42 +6,37 @@ body {
     background-size: cover;
 }
 form {
-	    background-color: #b3a69ee8;
+	    background-color: #d2cdc7d6;
     padding: 30px;
     width: 40%;
+    border-style: double;
+    border-width: thick;
 }
-label{
-		font-size: 22px;
-}
-.button {
-    	display: inline-block;
-    padding: 10px 16px;
-    font-size: 24px;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    outline: none;
-    color: #478808de;
-    border: solid;
-    border-radius: 25px;
-}
+.confirmations {
+		font-size:26px; 
+	font-style:italic;
 
-
-.button:hover {
-		background-color: white
 }
-
-.button:active {
-  		background-color: #3e8e41;
-  transform: translateY(4px);
+img {
+	width: 100px;
+    height: 84px;
 }
-
 </style>
-
 <form method="post" action="confirm_page">
 	<center>
-		<p style="font-size:28px; font-weight:bold;">Please confirm your order below:</p>
-	<div class="confirm_quantity" style="font-size:26px; font-style:italic;">
+	<p class="small_headings">Please confirm your order below:</p>
+	
+	<div class="confirmations">
+		<%= p_delivery.capitalize %><br>
+	</div>
+		<input type="radio" name="confirm_delivery" value="yes" required checked style="width:15px;height:15px;">
+			<label for="yes">Yes</label>
+		<input type="radio" name="confirm_delivery" value="no" style="width:15px;height:15px;">		
+			<label for="no">No</label>
+
+	<hr>
+
+	<div class="confirmations">
 			<% p_quantity.to_i %>
 			<% if p_quantity.to_i > 1 %>
 				<%= "#{p_quantity} Pizzas" %>
@@ -49,54 +44,67 @@ label{
 				<%= "#{p_quantity} Pizza" %>
 			<% end %><br>
 	</div>
-		<input type="radio" style="width:15px; height:15px;" name="confirm_quantity" value="yes" required>
+		<input type="radio" name="confirm_quantity" value="yes" required checked style="width:15px;height:15px;"> 
 			<label for="yes">Yes</label>
-		<input type="radio" style="width:15px; height:15px;" name="confirm_quantity" value="no">	
+		<input type="radio" name="confirm_quantity" value="no" style="width:15px;height:15px;">	
 			<label for="no">No</label>
 
 	<hr>
 	
-	<div class="confirm_size" style="font-size:26px; font-style:italic;">
+	<div class="confirmations">
 			<%= p_size.capitalize %><br>
 	</div>
-		<input type="radio" style="width:15px; height:15px;" name="confirm_size" value="yes" required>
+		<input type="radio" name="confirm_size" value="yes" required checked style="width:15px;height:15px;">
 			<label for="yes">Yes</label>
-		<input type="radio" style="width:15px; height:15px;" name="confirm_size" value="no">		
+		<input type="radio" name="confirm_size" value="no" style="width:15px;height:15px;">		
 			<label for="no">No</label>
 				
 	<hr>
 	
-	<div class="confirm_crust" style="font-size:26px; font-style:italic;">
+	<div class="confirmations">
 			<%= p_crust.capitalize %><br>
 	</div>
-		<input type="radio" style="width:15px; height:15px;" name="confirm_crust" value="yes" required>
+		<input type="radio" name="confirm_crust" value="yes" required checked style="width:15px;height:15px;">
 			<label for="yes">Yes</label>
-		<input type="radio" style="width:15px; height:15px;" name="confirm_crust" value="no">		
+		<input type="radio" name="confirm_crust" value="no" style="width:15px;height:15px;">		
 			<label for="no">No</label>
 				
 	<hr>
 
-	<div class="confirm_topping" style="font-size:26px; font-style:italic;">
+	<div class="confirmations">
 			<% toppings.each do |top| %>
-				<%="#{top.capitalize}," %>
-			<% unless toppings.last %>
-				<%= toppings.last.capitalize %>
+				<%="#{top.capitalize}" %><br>
+					<% if top == "Pepperoni" %>
+						<img src="/img/pepperoni.png" alt="Pepperoni Icon"><br>
+					<% elsif top == "Sausage" %>
+						<img src="/img/sausage.png" alt="Sausage Icon"><br>
+					<% elsif top == "Ham" %>
+						<img src="/img/ham.png" alt="Ham Icon"><br>
+					<% elsif top == "Bacon" %>
+						<img src="/img/bacon.png" alt="Bacon Icon"><br>
+					<% elsif top == "Green Peppers" %>
+						<img src="/img/peppers.png" alt="Green Peppers Icon"><br>
+					<% elsif top == "Banana Peppers" %>
+						<img src="/img/bpeppers.png" alt="Banana Peppers Icon"><br>
+					<% elsif top == "Mushrooms" %>
+						<img src="/img/mushrooms.png" alt="Mushrooms Icon"><br>
+					<% elsif top == "Olives" %>
+						<img src="/img/olives.png" alt="Olives Icon"><br>
+					<% elsif top == "Onions" %>
+						<img src="/img/onions.png" alt="Onions Icon"><br>
+					<% elsif top == "Pineapple" %>
+						<img src="/img/pineapple.png" alt="Pineapple Icon"><br>
+					<% elsif top == "Extra Cheese" %>
+						<img src="/img/cheese.png" alt="Cheese Icon"><br>
+					<% else top == "None" %>
 				<% end %>
-			<%end%><br>
-	</div>
-		<input type="radio" style="width:15px; height:15px;" name="confirm_topping" value="yes" required>
-			<label for="yes">Yes</label>
-		<input type="radio" style="width:15px; height:15px;" name="confirm_topping" value="no">		
-			<label for="no">No</label>
-			
-	<hr>
+			<%end%>
 
-	<div class="confirm_delivery" style="font-size:26px; font-style:italic;">
-		<%= p_delivery.capitalize %><br>
+
 	</div>
-		<input type="radio"style="width:15px; height:15px;" name="confirm_delivery" value="yes" required>
+		<input type="radio" name="confirm_topping" value="yes" required checked style="width:15px;height:15px;">
 			<label for="yes">Yes</label>
-		<input type="radio" style="width:15px; height:15px;" name="confirm_delivery" value="no">		
+		<input type="radio" name="confirm_topping" value="no" style="width:15px;height:15px;">		
 			<label for="no">No</label>
 			
 	</center>

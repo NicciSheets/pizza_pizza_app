@@ -16,34 +16,7 @@
 }
 
 body {
-	    background-color: #f4e5ce
-}
-
-.submit {
-    	display: inline-block;
-    padding: 10px 16px;
-    font-size: 24px;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    outline: none;
-    color: #478808de;
-    border: solid;
-    border-radius: 25px;
-}
-
-
-.submit:hover {
-		background-color: white
-}
-
-.submit:active {
-  		background-color: #3e8e41;
-  transform: translateY(4px);
-}
-
-label {
-		font-size: 24px;
+	    background-color: #e6e1dcc2
 }
 </style>
 
@@ -52,76 +25,68 @@ label {
 		<div class="title"> Slice of Heaven </div><br>
 	</div>
 	<div class="quantity">
-		<p style="font-size:28px; font-weight:bold;"> Please choose how many pizzas you would like: </p>
-		<input type="number" name="how_many" placeholder="Number of Pizzas" maxlength="2" min="0" required style="height:28px;   width:20%; text-align:center; font-size:20px"><br>
+		<p class="small_headings"> Please choose how many pizzas you would like: </p>
+		<input type="number" name="how_many" placeholder="Number of Pizzas" maxlength="2" min="0" required autofocus style="height:28px;
+	width:20%;text-align:center;font-size:18px"><br>
 	</div>
 <hr/>
 	<div class="size_button">
-		<p style="font-size:28px; font-weight:bold;"> Please pick a size: </p>
-		<input type="radio" style="width:15px; height:15px;" name="pizza_size" id="small_pizza" value="Small" required>
+		<p class="small_headings"> Please pick a size: </p>
+		<input type="radio" class="my_box" name="pizza_size" id="small_pizza" value="Small" required style="width:15px;height:15px;">
 			<label for="small"> Small - $5.00 </label><br>
-		<input type="radio" style="width:15px; height:15px;" name="pizza_size" id="med_pizza" value="Medium">		
+		<input type="radio" class="my_box" name="pizza_size" id="med_pizza" value="Medium" style="width:15px;height:15px;">		
 			<label for="medium"> Medium - $7.00 </label><br>
-		<input type="radio" style="width:15px; height:15px;" name="pizza_size" id="lg_pizza" value="Large">
+		<input class="my_box" type="radio" name="pizza_size" id="lg_pizza" value="Large" style="width:15px;height:15px;">
 			<label for="large"> Large - $9.00 </label><br>
 	</div>
 <hr/>
 	<div class="crust_style">
-		<p style="font-size:28px; font-weight:bold;"> Please choose your crust: </p>
-		<input type="radio" style="width:15px; height:15px;" name="crust_type" id="hand" value="Hand Tossed" required>
+		<p class="small_headings"> Please choose your crust: </p>
+		<input type="radio" name="crust_type" id="hand" value="Hand Tossed" required style="width:15px;height:15px;">
 			<label for="hand tossed"> Hand Tossed </label><br>
-		<input type="radio" style="width:15px; height:15px;" name="crust_type" id="pan" value="Pan Crust">		
+		<input type="radio" name="crust_type" id="pan" value="Pan Crust" style="width:15px;height:15px;">		
 			<label for="pan crust"> Pan Crust ($1.00/Pizza) </label><br>					
 	</div>
 <hr/>
 	<div class="topping_choices">
-		<p style="font-size:28px; font-weight:bold;"> Please choose which toppings you would like: </p>
+		<p class="small_headings"> Please choose which toppings you would like: </p>
 		<div class="meats">
-			<input type="checkbox" style="width:15px; height:15px;" name="toppings[]" id="pepp" value="Pepperoni" class="topping_choices">
+			<input type="checkbox" name="toppings[]" id="pepp" value="Pepperoni" class="topping_choices" style="width:15px;height:15px;">
 				<label for="pepperoni"> Pepperoni ($0.50/Pizza) </label><br>
-			<input type="checkbox" style="width:15px; height:15px;" name="toppings[]" id="saus" value="Sausage" class="topping_choices">
+			<input type="checkbox" name="toppings[]" id="saus" value="Sausage" class="topping_choices" style="width:15px;height:15px;">
 				<label for="sausage"> Sausage ($0.50/Pizza) </label><br>
-			<input type="checkbox" style="width:15px; height:15px;" name="toppings[]" id="ham" value="Ham" class="topping_choices">	
+			<input type="checkbox" name="toppings[]" id="ham" value="Ham" class="topping_choices" style="width:15px;height:15px;">	
 				<label for="ham"> Ham ($0.75/Pizza) </label><br>
-			<input type="checkbox" style="width:15px; height:15px;" name="toppings[]" id="bacon" value="Bacon" class="topping_choices">					
+			<input type="checkbox" name="toppings[]" id="bacon" value="Bacon" class="topping_choices" style="width:15px;height:15px;">					
 				<label for="bacon"> Bacon ($0.75/Pizza) </label><br>
 		</div>
 		<div class="veggies">
-			<input type="checkbox" style="width:15px; height:15px;" name="toppings[]" id="gpepp" value="Green Peppers" class="topping_choices">
+			<input type="checkbox" name="toppings[]" id="gpepp" value="Green Peppers" class="topping_choices" style="width:15px;height:15px;">
 				<label for="green_peppers"> Green Peppers ($0.25/Pizza) </label><br>
-			<input type="checkbox" style="width:15px; height:15px;" name="toppings[]" id="bpepp" value="Banana Peppers" class="topping_choices">		
+			<input type="checkbox" name="toppings[]" id="bpepp" value="Banana Peppers" class="topping_choices" style="width:15px;height:15px;">		
 				<label for="banana_peppers"> Banana Peppers ($0.25/Pizza) </label><br>
-			<input type="checkbox" style="width:15px; height:15px;" name="toppings[]" id="mush" value="Mushrooms" class="topping_choices">		
+			<input type="checkbox" name="toppings[]" id="mush" value="Mushrooms" class="topping_choices" style="width:15px;height:15px;">		
 				<label for="mushrooms"> Mushrooms ($0.25/Pizza) </label><br>
-			<input type="checkbox" style="width:15px; height:15px;" name="toppings[]" id="olive" value="Olives" class="topping_choices">		
+			<input type="checkbox" name="toppings[]" id="olive" value="Olives" class="topping_choices" style="width:15px;height:15px;">		
 				<label for="olives"> Olives ($0.25/Pizza) </label><br>
-			<input type="checkbox" style="width:15px; height:15px;" name="toppings[]" id="onion" value="Onions" class="topping_choices">		
+			<input type="checkbox" name="toppings[]" id="onion" value="Onions" class="topping_choices" style="width:15px;height:15px;">		
 				<label for="onions"> Onions ($0.25/Pizza) </label><br>
 					
 		</div>
 		<div class="extras">
-			<input type="checkbox" style="width:15px; height:15px;" name="toppings[]" id="pine" value="Pineapple" class="topping_choices">
+			<input type="checkbox" name="toppings[]" id="pine" value="Pineapple" class="topping_choices" style="width:15px;height:15px;">
 				<label for="pineapple"> Pineapple ($1.00/Pizza) </label><br>
-			<input type="checkbox" style="width:15px; height:15px;" name="toppings[]" id="exchez" value="Extra Cheese" class="topping_choices">		
+			<input type="checkbox" name="toppings[]" id="exchez" value="Extra Cheese" class="topping_choices" style="width:15px;height:15px;">		
 				<label for="extra_cheese"> Extra Cheese ($1.00/Pizza) </label><br>
 					
 		</div>
 		<div class="none">
-			<input type="checkbox" style="width:15px; height:15px;" name="toppings[]" id="none" value="No Toppings" class="topping_choices">
+			<input type="checkbox" name="toppings[]" id="none" value="No Toppings" class="topping_choices" style="width:15px;height:15px;">
 				<label for="none"> No Toppings </label><br>					
 		</div>
 	</div>
-<hr/>
-	<!-- <div class="delivery_buttons">
-		<p style="font-size:28px; font-weight:bold;"> Will this be carryout or delivery? </p>
-		<input type="radio" style="width:15px; height:15px;" name="delivery_option" id="carry_out" value="carryout" required>
-				<label for="carryout"> Carryout </label><br>
-		<input type="radio" style="width:15px; height:15px;" name="delivery_option" id="no_dining_room" value="delivery">		
-				<label for="delivery"> Delivery ($5.00 Fee) </label><br>
-					
-	</div> -->
 </div><br>
-<input type="submit" name="submit" value="Submit" onclick="return val();" />
+<input type="submit" class="button" name="submit" value="Submit" onclick="return val();" />
 </form>
 
 

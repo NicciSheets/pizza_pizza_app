@@ -51,13 +51,12 @@ end
 
 def delivery(delivery_option)
 	delivery_arr = []
-	charge = 0
 	if delivery_option == "Delivery"
-		charge += 5.00
+		delivery_arr << 3.00
 	else 
-		charge = 0.00
+		delivery_arr << 0.00
 	end
-	delivery_arr << charge
+	delivery_arr
 end
 
 
