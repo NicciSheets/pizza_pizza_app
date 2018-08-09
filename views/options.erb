@@ -87,10 +87,10 @@ body {
 				<label for="extra_cheese"> Extra Cheese ($1.00/Pizza) </label><br>
 		<!-- </div>	 -->		
 	</div>
-		<div class="none">
+		<!-- <div class="none"> -->
 			<input type="checkbox" name="toppings[]" id="none" value="No Toppings" class="none" style="width:15px;height:15px;" data-disable="top1,top2,top3,top4,top5,top6,top7,top8,top9,top10,top11">
 				<label for="none"> No Toppings </label><br>					
-		</div>
+		<!-- </div> -->
 	
 	
 </div><br>
@@ -98,19 +98,19 @@ body {
 </form>
 <footer>
 	<script>
-function myFunc() {
-	var checker = document.getElementById("t_choices").querySelectorAll("input.topping_choices");
-	var radioNone = document.getElementById("none");
-	console.log("checker", checker);
-	console.log("radionone", radioNone);
-	for (var i = 0; i < checker.length; i++) {
-				if (checker[i].checked) {
-					radioNone.disabled;
-					break
-				}
-				return
-	}
-	}
+$("input[type='checkbox']").click(function(){
+$("input[type='checkbox']").each(function(){
+    $(this).prop('disabled',false);
+    });
+if($(this).is(":checked")){
+  
+    var checkboxesToDisableList = $(this).data('disable').split(',');  
+    $.each(checkboxesToDisableList, function() { 
+    var id = "#"+this;
+      $(id).prop('disabled',true);
+    });
+}
+});
 
 
  </script>

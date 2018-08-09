@@ -35,16 +35,3 @@ function infoToo(x) {
 }
 
 
-$("input[type='checkbox']").click(function(){
-$("input[type='checkbox']").each(function(){
-    $(this).prop('disabled',false);
-    });
-if($(this).is(":checked")){
-  
-    var checkboxesToDisableList = $(this).data('disable').split(',');  
-    $.each(checkboxesToDisableList, function() { 
-    var id = "#"+this;
-      $(id).prop('disabled',true);
-    });
-}
-});
