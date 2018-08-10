@@ -31,14 +31,16 @@ body {
 	<div class="title_box">
 		<div class="title"> Slice of Heaven </div><br>
 	</div>
+	<p style="color:red"> * indicates a required field </p>
 	<div class="quantity">
-		<p class="small_headings"> Please choose how many pizzas you would like: </p>
-		<input type="number" name="how_many" placeholder="Number of Pizzas" maxlength="2" min="0" required autofocus style="height:28px;
+		<p class="small_headings"><span style="color:red;">*</span> Please choose how many pizzas you would like: </p>
+		<p class="required_text"> 
+				<input type="number" name="how_many" placeholder="Number of Pizzas" maxlength="2" min="0" required autofocus style="height:28px;
 	width:20%;text-align:center;font-size:18px"><br>
 	</div>
 <hr/>
 	<div class="size_button">
-		<p class="small_headings"> Please pick a size: </p>
+		 <p class="small_headings"><span style="color:red;">*</span> Please pick a size: </p>
 		<input type="radio" class="my_box" name="pizza_size" id="small_pizza" value="Small" required style="width:15px;height:15px;">
 			<label for="small"> Small - $5.00 </label><br>
 		<input type="radio" class="my_box" name="pizza_size" id="med_pizza" value="Medium" style="width:15px;height:15px;">		
@@ -48,7 +50,7 @@ body {
 	</div>
 <hr/>
 	<div class="crust_style">
-		<p class="small_headings"> Please choose your crust: </p>
+		<p class="small_headings"><span style="color:red;">*</span> Please choose your crust: </p>
 		<input type="radio" name="crust_type" id="hand" value="Hand Tossed" required style="width:15px;height:15px;">
 			<label for="hand tossed"> Hand Tossed </label><br>
 		<input type="radio" name="crust_type" id="pan" value="Pan Crust" style="width:15px;height:15px;">		
@@ -56,7 +58,7 @@ body {
 	</div>
 <hr/>
 	<div class="topping_choice" id="t_choices">
-		<p class="small_headings"> Please choose which toppings you would like: </p>
+		<p class="small_headings"><span style="color:red;">*</span> Please choose which toppings you would like: </p>
 		<!-- <div class="meats"> -->
 			<input type="checkbox" name="toppings[]" id="top1" value="Pepperoni" class="topping_choices" style="width:15px;height:15px;" data-disable="none">
 				<label for="pepperoni"> Pepperoni ($0.50/Pizza) </label><br>
